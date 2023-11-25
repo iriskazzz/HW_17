@@ -1,0 +1,54 @@
+plugins {
+    id 'java-library'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+allure {
+    report {
+        version.set("2.19.0")
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.19.0")
+            }
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            'org.junit.jupiter:junit-jupiter:5.9.2',
+            'com.codeborne:selenide:6.17.2',
+            'com.github.javafaker:javafaker:1.0.2',
+            'io.qameta.allure:allure-selenide:2.21.0'
+    )
+}
+
+tasks.withType(JavaCompiler) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Test) {
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+        exceptionFormat "full"
+    }
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+}
+
+tasks.register("testByTags", Test) {
+    useJUnitPlatform {
+        def tags = System.getProperty("tags", "")
+        tags.split(",").each { String str ->
+            def tag = str.trim()
+            if (tag != "") includeTags(tag)
+        }
+    }
+}
