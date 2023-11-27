@@ -23,7 +23,7 @@ public class MainFormPage {
     return this;
   }
 
-  @Step("Открытие раздела {value} из бокового меню")
+  @Step("Открытие раздела {section} из бокового меню")
   public MainFormPage openSideMenu(String section, String subsection) {
     iconSideMenu.click();
     $(byText(section)).click();
