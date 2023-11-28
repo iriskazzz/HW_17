@@ -11,6 +11,7 @@ public class CheckMainFormTests extends TestBase {
   MainFormPage mainFormPage = new MainFormPage();
 
   @Tag("regress")
+  @Tag("smoke")
   @CsvSource(value = {
           "Идеи подарков,  Для него , 18",
           "Дом и климат,  Пылесосы , 5",
