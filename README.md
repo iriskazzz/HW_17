@@ -67,7 +67,7 @@ clean testByTags
 <img title="Jenkins Build" src="media/screens/JenkinsBuild.png">
 </p>
 
-## <img src="media/logo/Allure_Report.svg" title="Allure Report" width="4%"/> Пример Allure-отчета
+## Пример Allure-отчета
 ### Overview
 
 <p align="center">
