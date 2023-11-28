@@ -3,7 +3,7 @@
 ## **Содержание:**
 
 - [Использованный стек технологий](#использованный-стек-технологий)
-- [Запуск тестов из терминала](#запуск-автотестов)
+- [Запуск автотестов](#запуск-автотестов)
 - [Сборка в Jenkins](#Сборка-в-Jenkins)
 - [Пример Allure-отчета](#Пример-Allure-отчета)
 - [Уведомления в Telegram с использованием бота](#Уведомления-в-Telegram-с-использованием-бота)
@@ -62,7 +62,7 @@ clean testByTags
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты.
 * <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 
-## <img src="media/logo/Jenkins.svg" title="Jenkins" width="4%"/> Сборка в Jenkins
+## Сборка в Jenkins
 <p align="center">
 <img title="Jenkins Build" src="media/screens/JenkinsBuild.png">
 </p>
@@ -80,7 +80,7 @@ clean testByTags
 <img title="Test Results in Alure" src="media/screens/ResultTest.png">
 </p>
 
-## <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
+## Уведомления в Telegram с использованием бота
 
 После завершения сборки, бот созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с результатом.
 
