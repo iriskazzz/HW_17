@@ -17,7 +17,7 @@ public class TestBase {
   @BeforeAll
   static void configure() {
     Configuration.baseUrl = "https://www.bork.ru/";
-    Configuration.browser =  System.getProperty("browserName", "chrome");
+    Configuration.browser = System.getProperty("browserName", "chrome");
     Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
     Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
 

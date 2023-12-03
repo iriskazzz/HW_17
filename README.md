@@ -1,4 +1,4 @@
-# Демо проект по автоматизации тестовых сценариев для магазина Bork
+# Демо проект по автоматизации тестовых сценариев для магазина [Bork](https://www.bork.ru/)
 
 ## **Содержание:**
 
@@ -12,23 +12,23 @@
 ## Использованный стек технологий
 
 <p align="center">
-<img width="6%" title="IntelliJ IDEA" src="media/logo/Intelij_IDEA.svg">
-<img width="6%" title="Java" src="media/logo/Java.svg">
-<img width="6%" title="Selenide" src="media/logo/Selenide.svg">
-<img width="6%" title="Selenoid" src="media/logo/Selenoid.svg">
-<img width="6%" title="Allure Report" src="media/logo/Allure_Report.svg">
-<img width="6%" title="Gradle" src="media/logo/Gradle.svg">
-<img width="6%" title="JUnit5" src="media/logo/JUnit5.svg">
-<img width="6%" title="GitHub" src="media/logo/GitHub.svg">
-<img width="6%" title="Jenkins" src="media/logo/Jenkins.svg">
-<img width="6%" title="Telegram" src="media/logo/Telegram.svg">
+<a href="https://www.jetbrains.com/idea/"><img width="6%" title="IntelliJ IDEA" src="media/logo/Intelij_IDEA.svg">
+<a href="https://www.java.com/"><img width="6%" title="Java" src="media/logo/Java.svg">
+<a href="https://selenide.org/"><img width="6%" title="Selenide" src="media/logo/Selenide.svg">
+<a href="https://selenoid.autotests.cloud/"><img width="6%" title="Selenoid" src="media/logo/Selenoid.svg">
+<a href="https://allurereport.org/"><img width="6%" title="Allure Report" src="media/logo/Allure_Report.svg">
+<a href="https://gradle.org/"><img width="6%" title="Gradle" src="media/logo/Gradle.svg">
+<a href="https://junit.org/junit5/"><img width="6%" title="JUnit5" src="media/logo/JUnit5.svg">
+<a href="https://github.com/"><img width="6%" title="GitHub" src="media/logo/GitHub.svg">
+<a href="https://www.jenkins.io/"><img width="6%" title="Jenkins" src="media/logo/Jenkins.svg">
+<a href="https://web.telegram.org/"><img width="6%" title="Telegram" src="media/logo/Telegram.svg">
 </p>
 
 - В данном проекте автотесты написаны на языке <code>Java</code> с использованием фреймворка Selenide для тестирования.
 - В качестве сборщика был использован - <code>Gradle</code>.
 - Использованы фреймворки <code>JUnit 5</code> и [Selenide](https://selenide.org/).
 - При прогоне тестов браузер запускается в [Selenoid](https://aerokube.com/selenoid/).
-- Для удаленного запуска реализована джоба в <code>Jenkins</code> с формированием Allure-отчета и отправкой результатов в <code>Telegram</code> при помощи бота.
+- Для удаленного запуска реализована джоба в [Jenkins](https://jenkins.autotests.cloud/job/MyProject58/) с формированием [Allure-отчета](https://jenkins.autotests.cloud/job/MyProject58/7/allure/) и отправкой результатов в <code>Telegram</code> при помощи бота.
 
 ## Содержание Allure-отчета:
 * Шаги теста;

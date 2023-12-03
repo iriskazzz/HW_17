@@ -23,6 +23,7 @@ repositories {
 
 dependencies {
     testImplementation(
+            "io.rest-assured:rest-assured:5.3.1",
             'org.junit.jupiter:junit-jupiter:5.9.2',
             'com.codeborne:selenide:6.17.2',
             'com.github.javafaker:javafaker:1.0.2',
