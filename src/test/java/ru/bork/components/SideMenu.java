@@ -11,10 +11,20 @@ public class SideMenu {
 
     private final SelenideElement iconSideMenu = $(".bork-header-modern__button-catalog");
 
-    @Step("Открытие раздела {section} из бокового меню")
-    public SideMenu openSideMenu(String section, String subsection) {
+    @Step("Открытие бокового меню")
+    public SideMenu openSideMenu() {
         iconSideMenu.click();
+        return this;
+    }
+
+    @Step("Открытие раздела {section}")
+    public SideMenu openSectionSideMenu(String section) {
         $(byText(section)).click();
+        return this;
+    }
+
+    @Step("Открытие подраздела {subsection}")
+    public SideMenu openSubsectionMenu(String subsection) {
         $x("//div[text()='" + subsection + "']/ancestor::a").click();
         return this;
     }

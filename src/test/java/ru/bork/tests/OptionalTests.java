@@ -23,7 +23,7 @@ public class OptionalTests extends TestBase {
     @Tag("searcher")
     @Story("Поисковик")
     @DisplayName("Проверка работы поисковика")
-    void CheckSearch() {
+    void checkSearch() {
         startPage.openPage();
         searcher.clickSearch()
                 .inputSearch("Воздухоочиститель-увлажнитель A705");
@@ -35,11 +35,10 @@ public class OptionalTests extends TestBase {
     @Tag("personal")
     @Story("Личный кабинет")
     @DisplayName("Проверка смены языка")
-    void CheckLang() {
+    void checkLang() {
         startPage.openPage()
                 .clickByText("Личный кабинет")
                 .clickByText("Eng")
                 .checkVisibleElement("Cleanliness and climate");
     }
-
 }

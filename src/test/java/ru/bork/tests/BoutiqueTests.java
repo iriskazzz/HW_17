@@ -18,10 +18,9 @@ public class BoutiqueTests extends TestBase {
     @Test
     @Tag("boutique")
     @DisplayName("Проверка отображения карты и списка бутиков")
-    void CheckMap() {
+    void checkMap() {
         startPage.openPage();
         map.openMap()
                 .checkMapList();
     }
-
 }

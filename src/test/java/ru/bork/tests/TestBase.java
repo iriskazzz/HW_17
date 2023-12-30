@@ -15,12 +15,13 @@ import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 public class TestBase {
 
+    public static String env = System.getProperty("env", "local");
     @BeforeAll
     static void configure() {
         Configuration.baseUrl = "https://www.bork.ru/";
         Configuration.browser = System.getProperty("browserName", "chrome");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        if (System.getProperty("env").equals("remote")) {
+        if (env.equals("remote")) {
             Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -41,7 +42,7 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        if (System.getProperty("env").equals("remote"))
+        if (env.equals("remote"))
             Attach.addVideo();
 
         closeWebDriver();

@@ -27,21 +27,38 @@ public class GoodsTests extends TestBase {
             "Кухня, Тостеры"
     })
     @ParameterizedTest(name = "Проверка открытия раздела {0} и подраздела {1} с карточками товаров")
-    void OpenSectionsFromSideMenu(String section, String subsection) {
+    void openSectionsFromSideMenu(String section, String subsection) {
         startPage.openPage();
-        sideMenu.openSideMenu(section, subsection);
+        sideMenu.openSideMenu()
+                .openSectionSideMenu(section)
+                .openSubsectionMenu(subsection);
         goodsPage.checkArticle();
     }
 
     @Test
     @Tag("goods")
     @DisplayName("Проверка добавления товара в корзину")
-    void CheckCart() {
+    void checkAddGood() {
         startPage.openPage();
-        sideMenu.openSideMenu("Кухня", "Чайники");
+        sideMenu.openSideMenu()
+                .openSectionSideMenu("Кухня")
+                .openSubsectionMenu("Чайники");
         goodsPage.openArticle()
                 .addArticleInCart();
-        cartPage.checkOpenCart();
+        cartPage.checkCart();
     }
 
+    @Test
+    @Tag("goods")
+    @DisplayName("Проверка удаления товара из корзины")
+    void checkDeleteGood() {
+        startPage.openPage();
+        sideMenu.openSideMenu()
+                .openSectionSideMenu("Кухня")
+                .openSubsectionMenu("Чайники");
+        goodsPage.openArticle()
+                .addArticleInCart()
+                .deleteArticleFromCart();
+        cartPage.checkEmptyCart();
+    }
 }

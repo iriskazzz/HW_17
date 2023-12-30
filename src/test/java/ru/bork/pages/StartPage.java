@@ -26,5 +26,4 @@ public class StartPage {
         $(byText(value)).shouldBe(Condition.visible);
         return this;
     }
-
 }

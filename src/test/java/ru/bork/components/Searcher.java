@@ -24,6 +24,4 @@ public class Searcher {
         productTitle.click();
         return this;
     }
-
-
 }
