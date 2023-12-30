@@ -27,7 +27,7 @@ public class GoodsTests extends TestBase {
             "Кухня, Тостеры"
     })
     @ParameterizedTest(name = "Проверка открытия раздела {0} и подраздела {1} с карточками товаров")
-    void openSectionsFromSideMenu(String section, String subsection) {
+    void openSectionsFromSideMenuTest(String section, String subsection) {
         startPage.openPage();
         sideMenu.openSideMenu()
                 .openSectionSideMenu(section)
@@ -38,7 +38,7 @@ public class GoodsTests extends TestBase {
     @Test
     @Tag("goods")
     @DisplayName("Проверка добавления товара в корзину")
-    void checkAddGood() {
+    void checkAddGoodTest() {
         startPage.openPage();
         sideMenu.openSideMenu()
                 .openSectionSideMenu("Кухня")
@@ -51,7 +51,7 @@ public class GoodsTests extends TestBase {
     @Test
     @Tag("goods")
     @DisplayName("Проверка удаления товара из корзины")
-    void checkDeleteGood() {
+    void checkDeleteGoodTest() {
         startPage.openPage();
         sideMenu.openSideMenu()
                 .openSectionSideMenu("Кухня")

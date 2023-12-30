@@ -21,7 +21,7 @@ public class RecipesTests extends TestBase {
     @Tag("recipes")
     @Story("Рецепты")
     @DisplayName("Проверка открытия страницы рецепта")
-    void checkOpenRecipe() {
+    void checkOpenRecipeTest() {
         startPage.openPage();
         sideMenu.openSideMenu()
                 .openSectionSideMenu("Рецепты");
