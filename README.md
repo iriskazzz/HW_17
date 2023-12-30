@@ -1,13 +1,28 @@
 # Демо проект по автоматизации тестовых сценариев для магазина [Bork](https://www.bork.ru/)
 
+<p align="center">
+<img title="bork" src="media/logo/bork_logo.png">
+</p>
+
 ## **Содержание:**
 
-- [Использованный стек технологий](#использованный-стек-технологий)
-- [Запуск автотестов](#запуск-автотестов)
-- [Сборка в Jenkins](#Сборка-в-Jenkins)
-- [Пример Allure-отчета](#Пример-Allure-отчета)
-- [Уведомления в Telegram с использованием бота](#Уведомления-в-Telegram-с-использованием-бота)
-- [Видео примера запуска тестов в Selenoid](#Видео-примера-запуска-тестов-в-Selenoid)
+> ➠ [Технологический стек](#использованный-стек-технологий)
+>
+> ➠ [Покрытый функционал](#покрытый-функционал)
+>
+> ➠ [Запуск из терминала](#запуск-тестов-из-терминала)
+> 
+> ➠ [Сборка в Jenkins](#earth_africa-Jenkins-job)
+>
+> ➠ [Примеры использования](#earth_africa-Allure-отчет)
+>
+> ➠ [Allure отчет](#earth_africa-Allure-отчет)
+>
+> ➠ [Интеграция с Jira](#earth_africa-Allure-отчет)
+>
+> ➠ [Отчет в Telegram](#earth_africa-Уведомление-в-Telegram-при-помощи-бота)
+>
+> ➠ [Видео примеры прохождения тестов](#earth_africa-Примеры-видео-о-прохождении-тестов)
 
 ## Использованный стек технологий
 
@@ -24,50 +39,70 @@
 <a href="https://web.telegram.org/"><img width="6%" title="Telegram" src="media/logo/Telegram.svg">
 </p>
 
-- В данном проекте автотесты написаны на языке <code>Java</code> с использованием фреймворка Selenide для тестирования.
-- В качестве сборщика был использован - <code>Gradle</code>.
-- Использованы фреймворки <code>JUnit 5</code> и [Selenide](https://selenide.org/).
-- При прогоне тестов браузер запускается в [Selenoid](https://aerokube.com/selenoid/).
-- Для удаленного запуска реализована джоба в [Jenkins](https://jenkins.autotests.cloud/job/MyProject58/) с формированием [Allure-отчета](https://jenkins.autotests.cloud/job/MyProject58/7/allure/) и отправкой результатов в <code>Telegram</code> при помощи бота.
+В данном проекте автотесты написаны на <code>Java</code> с использованием <code>Selenide</code> для UI-тестов
 
-## Содержание Allure-отчета:
-* Шаги теста;
-* Скриншот страницы на последнем шаге;
-* Page Source;
-* Логи браузерной консоли;
-* Видео выполнения автотеста.
+#### Реализованы паттерны PageObject и Lambda Steps
+>
+> <code>Selenoid</code> выполняет запуск браузеров в контейнерах <code>Docker</code>.
+>
+> <code>Allure Report</code> формирует отчеты о запуске тестов.
+>
+> Для автоматизированной сборки проекта используется <code>Gradle</code>.
+>
+> В качестве библиотеки для модульного тестирования используется <code>JUnit 5</code>.
+>
+> <code>Jenkins</code> выполняет запуск тестов.
+> 
+> После завершения прогона отправляются уведомления с помощью бота в <code>Telegram</code>.
 
-## Запуск автотестов
 
-### Запуск тестов из терминала
+## Покрытый функционал
+
+- [x] Проверка отображения карты и списка бутиков
+- [x] Проверка открытия раздела и подраздела с карточками товаров
+- [x] Проверка добавления товара в корзину
+- [x] Проверка удаления товара из корзины
+- [x] Проверка работы поисковика
+- [x] Проверка смены языка
+- [x] Проверка открытия страницы рецепта
+
+## Запуск тестов из терминала
+
+### Локальный запуск
 ```
 gradle clean test
+```
+
+### Удаленный запуск тестов на Jenkins
+
+```
+clean
+testByTags
+-Dtags=${TAG}
+-DbrowserName=${BROWSER}
+-DbrowserVersion=${BROWSER_VERSION}
+-DbrowserSize=${BROWSER_SIZE}
+-DremoteUrl=${REMOTE_URL}
+-Denv=remote
 ```
 При выполнении команды, данные тесты запустятся удаленно в <code>Selenoid</code>.
 
 При необходимости также можно переопределить параметры запуска
 
-```
-clean testByTags 
--Dtags=${TAG} 
--DbrowserName=${BROWSER}
--DbrowserSize=${BROWSER_SIZE}
--DremoteUrl=${REMOTE_URL}
-```
-
 ### Параметры сборки
 
 * <code>TAG</code> – тэг с которым будут запускаться тесты.
 * <code>BROWSER</code> – браузер, в котором будут выполняться тесты. По-умолчанию - <code>chrome</code>.
-* <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты.
+* <code>BROWSER_VERSION</code> - версия браузера. По-умолчанию - <code>100.0</code>.
+* <code>BROWSER_SIZE</code> – размер окна браузера. По-умолчанию - <code>1920x1080</code>.
 * <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 
-## Сборка в Jenkins
+## [Сборка в Jenkins](https://jenkins.autotests.cloud/job/zolina_dimplom_ui/)
 <p align="center">
 <img title="Jenkins Build" src="media/screens/JenkinsBuild.png">
 </p>
 
-## Пример Allure-отчета
+## [Пример Allure-отчета](https://jenkins.autotests.cloud/job/zolina_dimplom_ui/17/allure/#)
 ### Overview
 
 <p align="center">
@@ -82,7 +117,7 @@ clean testByTags
 
 ## Уведомления в Telegram с использованием бота
 
-После завершения сборки, бот созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с результатом.
+> После завершения сборки, бот созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с результатом.
 
 <p align="center">
 <img width="70%" title="Telegram Notifications" src="media/screens/notification.png">
