@@ -14,7 +14,8 @@ public class GoodsPage {
     private final SelenideElement
             basketTitle = $(".purchase-basket__title"),
             article = $("article a"),
-    removeButton = $("[data-test=basket-products-remove-button]");
+            removeButton = $("[data-test=basket-products-remove-button]"),
+            addButton = $(byText("Купить"));
 
     @Step("Проверка отображения товаров на странице")
     public GoodsPage checkArticle() {
@@ -30,7 +31,7 @@ public class GoodsPage {
 
     @Step("Добавление товара в корзину")
     public GoodsPage addArticleInCart() {
-        $(byText("Купить")).click();
+        addButton.click();
         basketTitle.shouldBe(visible);
         return this;
     }
