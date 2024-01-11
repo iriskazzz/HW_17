@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import ru.bork.components.SideMenu;
+import ru.bork.pages.components.SideMenu;
 import ru.bork.pages.CartPage;
 import ru.bork.pages.GoodsPage;
 import ru.bork.pages.StartPage;

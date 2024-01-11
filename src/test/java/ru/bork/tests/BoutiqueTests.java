@@ -5,7 +5,7 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import ru.bork.components.Map;
+import ru.bork.pages.components.Map;
 import ru.bork.pages.StartPage;
 
 @Owner("izolina")

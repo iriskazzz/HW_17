@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class RecipesPage {
 
-    private String RECIPECONTENT = "Ингредиенты";
+    private String recipecontent = "Ингредиенты";
 
     private final SelenideElement
             recipeTitle = $(".recipe__content_title"),
@@ -22,7 +22,7 @@ public class RecipesPage {
 
     @Step("Проверка контента на странице рецепта")
     public RecipesPage checkRecipe() {
-        recipeTitle.shouldHave(text(RECIPECONTENT));
+        recipeTitle.shouldHave(text(recipecontent));
         return this;
     }
 }

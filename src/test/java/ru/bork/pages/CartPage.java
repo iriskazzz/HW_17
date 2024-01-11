@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CartPage {
 
-    private String URLCURRENT = "https://www.bork.ru/eShop/basket/";
-    private String BASKETTEXT = "Корзина";
+    private String urlCurrent = baseUrl + "eShop/basket/";
+    private String basketText = "Корзина";
 
     private final SelenideElement
             basketTitle = $(".purchase-basket__title"),
@@ -22,8 +22,8 @@ public class CartPage {
 
     @Step("Проверка открытия корзины с товаром")
     public CartPage checkCart() {
-        assertEquals(URLCURRENT, WebDriverRunner.url());
-        basketTitle.shouldHave(text(BASKETTEXT));
+        assertEquals(urlCurrent, WebDriverRunner.url());
+        basketTitle.shouldHave(text(basketText));
         products.shouldBe(visible);
         return this;
     }

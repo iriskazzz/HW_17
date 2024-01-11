@@ -1,4 +1,4 @@
-package ru.bork.components;
+package ru.bork.pages.components;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;

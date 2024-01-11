@@ -6,7 +6,7 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import ru.bork.components.SideMenu;
+import ru.bork.pages.components.SideMenu;
 import ru.bork.pages.RecipesPage;
 import ru.bork.pages.StartPage;
 

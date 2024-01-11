@@ -98,7 +98,7 @@ testByTags
 <img title="Jenkins Build" src="media/screens/JenkinsBuild.png">
 </p>
 
-## [Пример Allure-отчета](https://jenkins.autotests.cloud/job/zolina_dimplom_ui/17/allure/#)
+## [Пример Allure-отчета](https://jenkins.autotests.cloud/job/zolina_dimplom_ui/allure)
 ### Overview
 
 <p align="center">

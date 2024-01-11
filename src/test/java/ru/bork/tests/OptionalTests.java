@@ -6,7 +6,7 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import ru.bork.components.Searcher;
+import ru.bork.pages.components.Searcher;
 import ru.bork.pages.GoodsPage;
 import ru.bork.pages.StartPage;
 
